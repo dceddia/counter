@@ -10,16 +10,14 @@ body {
   font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
   color: #555;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .counter h2 {
   margin: 0;
   margin-bottom: 15px;
   font-weight: 600;
-}
-.counter > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .counter .count {
   margin: 0 40px;
