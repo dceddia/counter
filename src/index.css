@@ -1,13 +1,15 @@
 body {
-  margin: 30px;
+  margin: 50px;
+  font-size: 60px;
 }
 .counter {
-  border: 2px solid #ccc;
-  padding: 20px;
-  width: 150px;
+  border: 4px solid #ccc;
+  padding: 80px 40px;
+  width: 400px;
   text-align: center;
-  font-family: "Source Sans Pro", "Open Sans", sans-serif;
+  font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
   color: #555;
+  margin: 0 auto;
 }
 .counter h2 {
   margin: 0;
@@ -20,19 +22,19 @@ body {
   justify-content: center;
 }
 .counter .count {
-  margin: 0 20px;
-  font-size: 30px;
-  font-family: "Fira Sans", sans-serif;
-  flex-basis: 40px;
+  margin: 0 40px;
+  font-size: 60px;
+  font-family: 'Fira Sans', sans-serif;
+  flex-basis: 60px;
   flex-grow: 0;
 }
 .counter button {
   border: 1px solid #ccc;
   color: #666;
-  font-size: 20px;
+  font-size: 30px;
   line-height: 0;
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +43,6 @@ body {
 .counter button:active,
 .counter button:focus {
   outline: none;
-
 }
 .counter button:active {
   background-color: rgb(87, 156, 87);
