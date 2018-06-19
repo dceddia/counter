@@ -1,15 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
+import { connect, Provider } from 'react-redux';
+import { createStore } from 'redux';
 import './index.css';
+
+const initialState = {
+  count: 0
+};
+
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+function reducer(state = initialState, action) {
+  switch (action.type) {
+    case 'INCREMENT':
+      return {
+        count: state.count + 1
+      };
+    case 'DECREMENT':
+      return {
+        count: state.count - 1
+      };
+    default:
+      return state;
+  }
+}
 
 class Counter extends React.Component {
   increment = () => {
-    // TODO
+    this.props.dispatch({ type: 'INCREMENT' });
   };
 
   decrement = () => {
-    // TODO
+    this.props.dispatch({ type: 'DECREMENT' });
   };
 
   render() {
@@ -29,4 +54,9 @@ const mapStateToProps = state => ({
 });
 const ReduxCounter = connect(mapStateToProps)(Counter);
 
-ReactDOM.render(<ReduxCounter />, document.querySelector('#root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <ReduxCounter />
+  </Provider>,
+  document.querySelector('#root')
+);
